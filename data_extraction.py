@@ -6,7 +6,8 @@ import numpy as np
 def drought_data():
     #Reading the drought file and dropping a useless column
     input_file = "drought_data/us-droughts.csv"
-    droughts_df=pd.read_csv(input_file)
+    droughts_df=pd.read_csv(input_file, encoding = "ISO-8859-1")
+
     droughts_df = droughts_df.drop(droughts_df[['validStart', 'validEnd', 'domStatisticFormatID']], axis=1)
     droughts_df.releaseDate = pd.to_datetime(droughts_df.releaseDate, format='%Y-%m-%d')
     #altering the drought statistics to get data that is directly workable:See excel example on file
