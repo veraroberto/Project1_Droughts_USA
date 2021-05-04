@@ -22,10 +22,21 @@ def fires_data():
     # Select data from 2000 to 2016
     filtered_df = wildfire_df.loc[(wildfire_df['IG_DATE'] >= '2000-01-01')
                          & (wildfire_df['IG_DATE'] < '2016-12-31')]
-    # clean date
+    # clean dates and add year column
     filtered_date_df = pd.DataFrame(filtered_df)
     filtered_date_df.IG_DATE = pd.to_datetime(filtered_date_df.IG_DATE, format='%Y-%m-%d').dt.date
-    filtered_date_df.reset_index(inplace=True)
-    df = filtered_date_df.drop("index", axis=1)
+    filtered_date_df["YEAR"] = pd.DatetimeIndex(filtered_date_df['IG_DATE']).year
     
-    return df
+    #Convert Acres to Miles
+    filtered_date_df["MILES"] = filtered_date_df["ACRES"].astype(float)*(1/640)
+    
+    # Add and reset index
+    filtered_date_df.reset_index(inplace=True)
+    index_df = filtered_date_df.drop("index", axis=1)
+
+    
+    # group data
+    #years_group = filtered_date_df.groupby("YEAR")
+    
+        
+    return index_df
