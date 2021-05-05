@@ -130,3 +130,5 @@ dmypy.json
 
 #Data
 drought_data/
+.DS_Store
+
