@@ -29,5 +29,6 @@ def intensity(drought_data):
     plt.xticks(fontsize=12)
     plt.title("Continental US Drought Area by level", fontsize=20)
     plt.legend(fontsize=14)
+    plt.grid(which="both")
     return fig
 
