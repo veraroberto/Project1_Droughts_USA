@@ -23,11 +23,8 @@
 * In our animated maps, highest drought level locations seem to be located as the wildfires. 
 
 
-<img src="https://github.com/veraroberto/Project1_Droughts_USA/blob/main/Heatmap_animation_US_Drought.gif 
-" width="90%"></img>
-
-<img src="https://github.com/veraroberto/Project1_Droughts_USA/blob/main/Fires_map.gif 
-" width="90%"></img>
+![](https://github.com/veraroberto/Project1_Droughts_USA/blob/main/Heatmap_animation_US_Drought.gif)
+![](https://github.com/veraroberto/Project1_Droughts_USA/blob/main/Fires_map.gif)
 
 
 ### Presentation 
